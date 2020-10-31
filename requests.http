@@ -1,0 +1,19 @@
+GET http://localhost:8080/users/creativexvc/ads/1
+
+###
+
+GET http://localhost:8080/users/creativexvc/ads
+
+###
+
+POST http://localhost:8080/users/creativexvc/ads
+Content-Type: application/json
+
+{
+  "title": "Tytuł ogłoszenia",
+  "description": "Opis ogłoszenia.",
+  "category": "Motoryzacja"
+
+}
+
+###
