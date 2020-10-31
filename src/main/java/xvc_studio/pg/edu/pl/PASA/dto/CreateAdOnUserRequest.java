@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode
-public class CreateAdRequest {
+public class CreateAdOnUserRequest {
 
     /**
      * Advertisement's title.
@@ -34,22 +34,17 @@ public class CreateAdRequest {
     private String category;
 
     /**
-     * Advertisement's owner.
-     */
-    private String user;
-
-    /**
      * @param categoryFunction function for converting category name to category entity object
      * @param userSupplier     supplier for providing new character owner
      * @return mapper for convenient converting dto object to entity object
      */
-    public static Function<CreateAdRequest, Ad> dtoToEntityMapper(
+    public static Function<CreateAdOnUserRequest, Ad> dtoToEntityMapper(
             Function<String, Category> categoryFunction,
-            Function<String, User> adFunction) {
+            Supplier<User> userSupplier) {
         return request -> Ad.builder()
                 .title(request.getTitle())
                 .description(request.getDescription())
-                .user(adFunction.apply(request.getUser()))
+                .user(userSupplier.get())
                 .category(categoryFunction.apply(request.getCategory()))
                 .build();
     }

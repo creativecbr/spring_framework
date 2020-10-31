@@ -30,13 +30,15 @@ public class CategoryService {
     public Category create(Category category){ return categoryRepository.save(category); }
 
     @Transactional
-    public void delete(String name){ categoryRepository.deleteById(name); }
+    public void delete(Long id){ categoryRepository.deleteById(id); }
 
     @Transactional
     public void update(Category category) {categoryRepository.save(category); }
 
 
-    public Optional<Category> find(String name) { return categoryRepository.findById(name); }
+    public Optional<Category> find(Long id) { return categoryRepository.findById(id); }
+
+    public Optional<Category> find(String name) { return categoryRepository.findByName(name); }
 
     public List<Category> findAll(){ return categoryRepository.findAll(); }
 

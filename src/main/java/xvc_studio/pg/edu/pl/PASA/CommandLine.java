@@ -209,7 +209,7 @@ public class CommandLine implements CommandLineRunner {
         name = reader.readLine();
         categoryService.find(name).ifPresentOrElse(
                 original ->{
-                    categoryService.delete(name);
+                    categoryService.delete(original.getId());
                     System.out.println("Category " + name + " deleted.");
                 },
                 () -> {

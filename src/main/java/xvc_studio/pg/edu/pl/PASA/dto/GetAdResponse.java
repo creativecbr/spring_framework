@@ -2,12 +2,7 @@ package xvc_studio.pg.edu.pl.PASA.dto;
 
 import lombok.*;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
-import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 
-import javax.persistence.*;
-import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
 
 @Getter

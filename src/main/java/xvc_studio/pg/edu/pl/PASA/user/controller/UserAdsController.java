@@ -7,11 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 import xvc_studio.pg.edu.pl.PASA.ad.service.AdService;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
 import xvc_studio.pg.edu.pl.PASA.category.service.CategoryService;
-import xvc_studio.pg.edu.pl.PASA.dto.CreateAdRequest;
-import xvc_studio.pg.edu.pl.PASA.dto.GetAdResponse;
-import xvc_studio.pg.edu.pl.PASA.dto.GetAdsResponse;
+import xvc_studio.pg.edu.pl.PASA.dto.*;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 import xvc_studio.pg.edu.pl.PASA.user.service.UserService;
 
@@ -53,12 +50,12 @@ public class UserAdsController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createAd(@PathVariable("username") String username, @RequestBody CreateAdRequest request, UriComponentsBuilder builder)
+    public ResponseEntity<Void> createAd(@PathVariable("username") String username, @RequestBody CreateAdOnUserRequest request, UriComponentsBuilder builder)
     {
         Optional<User> user = userService.find(username);
         if(user.isPresent())
         {
-            Ad ad = CreateAdRequest
+            Ad ad = CreateAdOnUserRequest
                     .dtoToEntityMapper(name -> categoryService.find(name).orElseThrow(), user::get)
                     .apply(request);
             ad = adService.create(ad);
@@ -69,6 +66,35 @@ public class UserAdsController {
         }
         else
             return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateAd(@PathVariable("username") String username, @RequestBody UpdateAdRequest request, @PathVariable("id") long id)
+    {
+        Optional<Ad> ad = adService.find(id, username);
+        if(ad.isPresent())
+        {
+            UpdateAdRequest.dtoToEntityUpdater().apply(ad.get(), request);
+            adService.update(ad.get());
+            return ResponseEntity.accepted().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<Void> deleteUserAd(@PathVariable("username") String username, @PathVariable("id") long id)
+    {
+        Optional<Ad> ad = adService.find(id, username);
+        if(ad.isPresent())
+        {
+            adService.delete(ad.get().getId());
+            return ResponseEntity.accepted().build();
+        }
+        else
+        {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 

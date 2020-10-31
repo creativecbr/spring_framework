@@ -1,7 +1,5 @@
 package xvc_studio.pg.edu.pl.PASA.dto;
-
 import lombok.*;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
@@ -13,7 +11,7 @@ import java.util.function.Function;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString
 @EqualsAndHashCode
-public class GetAdsResponse {
+public class GetAdsByCategoriesResponse {
 
     @Getter
     @Setter
@@ -33,26 +31,18 @@ public class GetAdsResponse {
          */
         private String description;
 
-
-        /**
-         * Ad's category.
-         */
-        private String category;
-
     }
 
     @Singular
     private List<Ad> ads;
 
-    public static Function<Collection<xvc_studio.pg.edu.pl.PASA.ad.entity.Ad>, GetAdsResponse> entityToDtoMapper()
-    {
+    public static Function<Collection<xvc_studio.pg.edu.pl.PASA.ad.entity.Ad>, GetAdsByCategoriesResponse> entityToDtoMapper() {
         return ads -> {
-            GetAdsResponseBuilder response = GetAdsResponse.builder();
+            GetAdsByCategoriesResponseBuilder response = GetAdsByCategoriesResponse.builder();
             ads.stream()
                     .map(ad -> Ad.builder()
                             .title(ad.getTitle())
                             .description(ad.getDescription())
-                            .category(ad.getCategory().getName())
                             .build())
                     .forEach(response::ad);
             return response.build();

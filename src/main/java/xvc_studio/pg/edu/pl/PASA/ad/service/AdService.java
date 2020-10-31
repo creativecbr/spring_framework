@@ -43,9 +43,10 @@ public class AdService {
      * @param userRepository repository of User entity.
      */
     @Autowired
-    public AdService(AdRepository adRepository, UserRepository userRepository){
+    public AdService(AdRepository adRepository, UserRepository userRepository, CategoryRepository categoryRepository){
         this.adRepository = adRepository;
         this.userRepository = userRepository;
+        this.categoryRepository = categoryRepository;
     }
 
 
@@ -83,7 +84,7 @@ public class AdService {
      */
     public List<Ad> findAllByCategoryName(String name) {
 
-        Optional<Category> category = categoryRepository.findById(name);
+        Optional<Category> category = categoryRepository.findByName(name);
         if(category.isPresent())
         {
             return adRepository.findAllByCategory(category.get());

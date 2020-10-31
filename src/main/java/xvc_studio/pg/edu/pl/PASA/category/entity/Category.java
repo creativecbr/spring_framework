@@ -22,11 +22,16 @@ import java.util.Set;
 @Table(name = "categories")
 public class Category implements Serializable {
 
-
     /**
-     * Unique name of category.
+     * Unique id of category.
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    /**
+     * Name of category.
+     */
     private String name;
 
 
