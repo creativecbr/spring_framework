@@ -1,6 +1,6 @@
-#Purchase & Sale Announcements
+# Purchase & Sale Announcements
 
-##Target
+## Target
 
 App designed to enable people selling and buying items online more easily.
 
