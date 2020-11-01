@@ -1,11 +1,8 @@
 package xvc_studio.pg.edu.pl.PASA.ad.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
-import xvc_studio.pg.edu.pl.PASA.data.DataStore;
-import xvc_studio.pg.edu.pl.PASA.repository.Repository;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 
 import java.util.List;
@@ -26,7 +23,7 @@ public interface AdRepository extends JpaRepository<Ad, Long> {
 
     /**
      * Get the list of all specify user's add.
-     * @param user
+     * @param user specified user
      * @return list of user's ads (can be empty)
      */
     List<Ad> findAllByUser(User user);

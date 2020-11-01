@@ -79,7 +79,6 @@ public class CommandLine implements CommandLineRunner {
             }
             else
             {
-                System.out.println("\n --------- Write help for commands. --------- \n");
                 String cmd = reader.readLine();
                 cmd = cmd.toLowerCase();
                 switch (cmd) {
@@ -131,7 +130,10 @@ public class CommandLine implements CommandLineRunner {
                     case "help":
                         printLegend();
                         break;
-
+                    default:
+                        System.out.println("Bad command.");
+                        System.out.println("--------- Write help for commands. --------- \n");
+                        break;
 
                 }
             }
@@ -159,13 +161,8 @@ public class CommandLine implements CommandLineRunner {
         login = reader.readLine();
 
         userService.find(login).ifPresentOrElse(
-                original ->{
-                    adService.findAll(original).forEach(System.out::println);
-
-                },
-                () -> {
-                    System.out.println("User with this login doesn't exist.");
-                }
+                original -> adService.findAll(original).forEach(System.out::println),
+                () -> System.out.println("User with this login doesn't exist.")
         );
     }
 
@@ -195,9 +192,7 @@ public class CommandLine implements CommandLineRunner {
                     adService.delete(Long.parseLong(id));
                     System.out.println("Ad number " + id + " removed.");
                 },
-                () -> {
-                    System.out.println("That ad doesn't exist.");
-                }
+                () -> System.out.println("That ad doesn't exist.")
         );
     }
 
@@ -212,9 +207,7 @@ public class CommandLine implements CommandLineRunner {
                     categoryService.delete(original.getId());
                     System.out.println("Category " + name + " deleted.");
                 },
-                () -> {
-                    System.out.println("Category " + name + " doesn't exist.");
-                }
+                () -> System.out.println("Category " + name + " doesn't exist.")
         );
     }
 
@@ -230,9 +223,7 @@ public class CommandLine implements CommandLineRunner {
                     userService.delete(login);
                     System.out.println("User " + login + " deleted.");
                 },
-                () -> {
-                    System.out.println("User with this login doesn't exist.");
-                }
+                () -> System.out.println("User with this login doesn't exist.")
         );
     }
 

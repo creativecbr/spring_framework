@@ -1,15 +1,10 @@
 package xvc_studio.pg.edu.pl.PASA.user.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
-import xvc_studio.pg.edu.pl.PASA.data.DataStore;
 import org.springframework.stereotype.Repository;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * User repository, should be used in buisness layer.
