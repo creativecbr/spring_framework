@@ -1,15 +1,11 @@
-# Purchase & Sale Announcements
+## Purchase & Sale Announcements
 
-## Target
+# User microservice
 
-App designed to enable people selling and buying items online more easily.
-
-## Commands
-
-> - TODO 
+Ads and simple category service in one separate data base.
 
 ## H2 in memory Data base
-Put ***localhost:8080/h2/*** in your browser.
+Put ***localhost:8083/h2/*** in your browser.
 
 ```bash 
 login: admin 
