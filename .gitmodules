@@ -6,3 +6,7 @@
 	path = user_service
 	url = https://github.com/creativecbr/spring_framework/
 	branch = spring_microservices_users
+[submodule "gateway"]
+	path = gateway
+	url = https://github.com/creativecbr/spring_framework
+	branch = spring_microservices_gateway
