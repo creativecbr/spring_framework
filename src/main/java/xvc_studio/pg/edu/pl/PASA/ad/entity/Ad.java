@@ -1,6 +1,8 @@
 package xvc_studio.pg.edu.pl.PASA.ad.entity;
 
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 
 import javax.persistence.*;
@@ -41,6 +43,7 @@ public class Ad implements Serializable {
      * Advertisement's category.
      */
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "category")
     private Category category;
 
