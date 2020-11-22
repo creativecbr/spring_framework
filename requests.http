@@ -1,14 +1,15 @@
+### USER MICROSERVICE
 
 
-GET http://localhost:8080/users/
-
-
-###
-
-GET http://localhost:8080/users/creativexvc/ads/5
+GET http://localhost:8080/users
 
 
 ###
+
+GET http://localhost:8080/users/creativexvc
+
+###
+
 
 POST http://localhost:8080/users
 Content-Type: application/json
@@ -22,14 +23,63 @@ Content-Type: application/json
   "email": "kokosy@gmail.com"
 }
 
+###
+
+GET http://localhost:8080/users
 
 ###
 
-GET http://localhost:8080/users/creativexvc/ads/9
+PUT http://localhost:8080/users/mandarynka
+Content-Type: application/json
+
+{
+  "name": "Jess",
+  "surname": "Pomarancz"
+}
 
 ###
 
+GET http://localhost:8080/users/mandarynka
 
+###
+
+DELETE http://localhost:8080/users/mandarynka
+
+###
+
+GET http://localhost:8080/users
+
+###
+
+### ADS & CATEGORIES MICROSERVICE
+
+###
+
+GET http://localhost:8080/users/creativexvc/ads
+
+
+###
+
+GET http://localhost:8080/users/creativexvc/ads/1
+
+
+###
+
+POST http://localhost:8080/users/creativexvc/ads
+Content-Type: application/json
+
+{
+  "title": "Tytuł ogłoszenia",
+  "description": "Opis ogłoszenia.",
+  "category": "Motoryzacja"
+
+}
+
+###
+
+GET http://localhost:8080/users/creativexvc/ads/
+
+###
 
 PUT http://localhost:8080/users/creativexvc/ads/9
 Content-Type: application/json
@@ -38,6 +88,10 @@ Content-Type: application/json
   "title": "Opel Kadet - jednak zawodna jednostka",
   "description": "Opel Kadet na części."
 }
+
+###
+
+GET http://localhost:8080/users/creativexvc/ads/
 
 ###
 
@@ -50,6 +104,21 @@ GET http://localhost:8080/ads
 
 ###
 
+POST http://localhost:8080/ads/
+Content-Type: application/json
+
+{
+  "title": "Nowe ogłoszenie",
+  "description": "Opis nowego ogłoszenia",
+  "category": "Motoryzacja",
+  "user": "creativexvc"
+}
+
+###
+
+GET http://localhost:8080/ads
+
+###
 
 PUT http://localhost:8080/ads/10
 Content-Type: application/json
@@ -62,33 +131,21 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:8080/ads
+
+###
 
 DELETE http://localhost:8080/ads/10
 
 ###
 
-PUT http://localhost:8080/ads/
-Content-Type: application/json
-
-{
-  "title": "Nowe ogłoszenie",
-  "description": "Opis nowego ogłoszenia",
-  "category": "Moasdasdacja",
-  "user": "creativsadc"
-}
-
-###
-
 GET http://localhost:8080/ads
 
-
-
 ###
+
 GET http://localhost:8080/categories
 
 ###
-
-
 
 POST http://localhost:8080/categories
 Content-Type: application/json
@@ -107,14 +164,41 @@ PUT http://localhost:8080/categories/4
 Content-Type: application/json
 
 {
-"name": "Edukacja"
+  "name": "Edukacja"
 }
 
 ###
 
-DELETE  http://localhost:8080/categories/1
-
+GET http://localhost:8080/categories
 
 ###
 
-GET http://localhost:8080/categories/Motoryzacja
+DELETE  http://localhost:8080/categories/4
+
+###
+
+GET http://localhost:8080/categories/Nieruchomosci
+
+###
+
+DELETE http://localhost:8080/categories/2
+
+###
+
+GET http://localhost:8080/ads
+
+### ###
+
+GET http://localhost:8080/users/creativexvc/ads
+
+###
+
+DELETE http://localhost:8080/users/creativexvc
+
+###
+
+GET http://localhost:8080/ads
+
+###
+
+GET http://localhost:8080/users
