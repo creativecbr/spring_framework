@@ -59,7 +59,7 @@ public class UserService {
     @Transactional
     public void create(User user){
         userRepository.save(user);
-//        eventRepository.create(user);
+        eventRepository.create(user);
     }
 
     /**
@@ -69,7 +69,7 @@ public class UserService {
     @Transactional
     public void delete(String login){
         userRepository.delete( userRepository.findByLogin(login).orElseThrow());
-//       eventRepository.delete( userRepository.findByLogin(login).orElseThrow());
+        eventRepository.delete( userRepository.findByLogin(login).orElseThrow());
     }
 
     /**
