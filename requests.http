@@ -1,6 +1,6 @@
 
 
-GET http://localhost:8080/users/creativexvc/ads
+GET http://localhost:8080/users/
 
 
 ###
@@ -10,15 +10,18 @@ GET http://localhost:8080/users/creativexvc/ads/5
 
 ###
 
-POST http://localhost:8080/users/creativexvc/ads
+POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-  "title": "Tytuł ogłoszenia",
-  "description": "Opis ogłoszenia.",
-  "category": "Motoryzacja"
-
+  "login": "mandarynka",
+  "name": "Jessica",
+  "surname": "Mandarin",
+  "birthDate": "1998-10-01",
+  "password": "00000000",
+  "email": "kokosy@gmail.com"
 }
+
 
 ###
 
@@ -109,7 +112,7 @@ Content-Type: application/json
 
 ###
 
-DELETE  http://localhost:8080/categories/4
+DELETE  http://localhost:8080/categories/1
 
 
 ###

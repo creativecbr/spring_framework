@@ -32,7 +32,7 @@ public class PasaApplication {
 				.route("ads", r -> r.host("localhost:8080")
 					.and()
 					.path("/ads", "ads/**", "/categories", "/categories/**", "/users/{username}/ads")
-					.uri("http://localhost:8081"))
+					.uri("http://localhost:8083"))
 				.build();
 	}
 

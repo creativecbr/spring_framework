@@ -1,20 +1,10 @@
-# Purchase & Sale Announcements
+## Purchase & Sale Announcements
 
-## Target
+# Gateway for microservices
 
-App designed to enable people selling and buying items online more easily.
+Gateway for **User** microservice and **Ads&Category** microservice.<br>
 
-## Commands
-
-> - TODO 
-
-## H2 in memory Data base
-Put ***localhost:8080/h2/*** in your browser.
-
-```bash 
-login: admin 
-password: adminadmin
-```
+```Working on port 8080.```
 
 ## Author
 Leśniewski Paweł © 2020, *student No.175724*
