@@ -32,32 +32,6 @@ public class User implements Serializable {
     @Id
     private String login;
 
-    /**
-    * User's name.
-    */
-    private String name;
-
-    /**
-     * User's surnname.
-     */
-    private String surname;
-
-    /**
-     * User's birth date.
-     */
-    private LocalDate birthDate;
-
-    /**
-     * User's password.
-     */
-    @ToString.Exclude
-    private String password;
-
-    /**
-     * User's unique email.
-     */
-    @Column(unique = true)
-    private String email;
 
     /**
      * User's list of ads.

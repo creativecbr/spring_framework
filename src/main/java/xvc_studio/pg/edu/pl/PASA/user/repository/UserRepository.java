@@ -12,20 +12,4 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
 
-    /**
-     * Seeks for single user using login and password (can be empty)
-     * @param login         user's login
-     * @param password      user's password
-     * @return              container with user (can be empty)
-     */
-    Optional<User> findByLoginAndPassword(String login, String password);
-
-
-    /**
-     * Seeks for single user by login.
-     * @param login user's login.
-     * @return container with user (can be empty)
-     */
-    Optional<User> findByLogin(String login);
-
 }

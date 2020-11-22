@@ -2,7 +2,6 @@ package xvc_studio.pg.edu.pl.PASA.dto;
 
 
 import lombok.*;
-import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 
 import java.util.Collection;
 import java.util.List;
@@ -40,7 +39,7 @@ public class GetCategoriesResponse {
     @Singular
     private List<Category> categories;
 
-    public static Function<Collection<xvc_studio.pg.edu.pl.PASA.category.entity.Category>, GetCategoriesResponse> entityToDtoMapper()
+    public static Function<Collection<xvc_studio.pg.edu.pl.PASA.ad.entity.Category>, GetCategoriesResponse> entityToDtoMapper()
     {
         return categories -> {
             GetCategoriesResponseBuilder response = GetCategoriesResponse.builder();

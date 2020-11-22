@@ -23,6 +23,11 @@ public class GetAdsResponse {
     @ToString
     @EqualsAndHashCode
     public static class Ad {
+
+        /**
+         * Id of the ad.
+         */
+        private Long id;
         /**
          * Title of the ad.
          */
@@ -50,6 +55,7 @@ public class GetAdsResponse {
             GetAdsResponseBuilder response = GetAdsResponse.builder();
             ads.stream()
                     .map(ad -> Ad.builder()
+                            .id(ad.getId())
                             .title(ad.getTitle())
                             .description(ad.getDescription())
                             .category(ad.getCategory().getName())

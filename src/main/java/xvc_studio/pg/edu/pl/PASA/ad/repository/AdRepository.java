@@ -2,7 +2,7 @@ package xvc_studio.pg.edu.pl.PASA.ad.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
+import xvc_studio.pg.edu.pl.PASA.ad.entity.Category;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 
 import java.util.List;

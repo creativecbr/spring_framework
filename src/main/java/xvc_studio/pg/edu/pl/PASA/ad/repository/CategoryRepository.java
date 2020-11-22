@@ -1,9 +1,9 @@
-package xvc_studio.pg.edu.pl.PASA.category.repository;
+package xvc_studio.pg.edu.pl.PASA.ad.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
+import xvc_studio.pg.edu.pl.PASA.ad.entity.Category;
 
 import java.util.Optional;
 

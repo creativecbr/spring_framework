@@ -4,12 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 import xvc_studio.pg.edu.pl.PASA.ad.repository.AdRepository;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
-import xvc_studio.pg.edu.pl.PASA.category.repository.CategoryRepository;
+import xvc_studio.pg.edu.pl.PASA.ad.entity.Category;
+import xvc_studio.pg.edu.pl.PASA.ad.repository.CategoryRepository;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 import xvc_studio.pg.edu.pl.PASA.user.repository.UserRepository;
 
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.List;
@@ -67,7 +66,7 @@ public class AdService {
 
     public Optional<Ad> find(Long id, String login) {
 
-        Optional<User> user =userRepository.findByLogin(login);
+        Optional<User> user = userRepository.findById(login);
         if(user.isPresent()) {
             return adRepository.findByIdAndUser(id, user.get());
         } else {

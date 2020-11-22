@@ -1,9 +1,9 @@
-package xvc_studio.pg.edu.pl.PASA.category.service;
+package xvc_studio.pg.edu.pl.PASA.ad.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
-import xvc_studio.pg.edu.pl.PASA.category.repository.CategoryRepository;
+import xvc_studio.pg.edu.pl.PASA.ad.entity.Category;
+import xvc_studio.pg.edu.pl.PASA.ad.repository.CategoryRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;

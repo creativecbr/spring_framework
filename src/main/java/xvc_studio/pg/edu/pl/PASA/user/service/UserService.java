@@ -37,14 +37,6 @@ public class UserService {
     public Optional<User> find(String login){ return userRepository.findById(login); }
 
     /**
-     *
-     * @param login
-     * @param password
-     * @return container with user. Seeks for single user using login and password.
-     */
-    public Optional<User> find(String login, String password){ return userRepository.findByLoginAndPassword(login, password); }
-
-    /**
      * Stores new user.
      *
      * @param user
@@ -53,17 +45,11 @@ public class UserService {
     public void create(User user){ userRepository.save(user); }
 
     /**
-     * Delete existing user.
-     * @param login
+     * Delete existing user.     *
      */
     @Transactional
-    public void delete(String login){ userRepository.delete( userRepository.findByLogin(login).orElseThrow()); }
+    public void delete(User user){ userRepository.delete(user); }
 
-    /**
-     * Return all user in list.
-     * @return List<User>
-     */
-    public List<User> findAll(){ return userRepository.findAll(); }
 
 
 }

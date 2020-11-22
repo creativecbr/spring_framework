@@ -1,4 +1,4 @@
-package xvc_studio.pg.edu.pl.PASA.user.controller;
+package xvc_studio.pg.edu.pl.PASA.ad.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 import xvc_studio.pg.edu.pl.PASA.ad.service.AdService;
-import xvc_studio.pg.edu.pl.PASA.category.service.CategoryService;
+import xvc_studio.pg.edu.pl.PASA.ad.service.CategoryService;
 import xvc_studio.pg.edu.pl.PASA.dto.*;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 import xvc_studio.pg.edu.pl.PASA.user.service.UserService;

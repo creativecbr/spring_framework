@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 import xvc_studio.pg.edu.pl.PASA.ad.service.AdService;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
-import xvc_studio.pg.edu.pl.PASA.category.service.CategoryService;
+import xvc_studio.pg.edu.pl.PASA.ad.service.CategoryService;
 import xvc_studio.pg.edu.pl.PASA.dto.*;
 import xvc_studio.pg.edu.pl.PASA.user.service.UserService;
 
@@ -25,16 +24,14 @@ import java.util.function.Function;
 @RequestMapping("/ads")
 public class AdsController {
 
-    private UserService userService;
     private CategoryService categoryService;
     private AdService adService;
 
 
     @Autowired
-    public AdsController(UserService userService, CategoryService categoryService, AdService adService)
+    public AdsController(CategoryService categoryService, AdService adService)
     {
         this.adService = adService;
-        this.userService = userService;
         this.categoryService = categoryService;
     }
 
@@ -59,7 +56,7 @@ public class AdsController {
     public ResponseEntity<Void> createAd(@RequestBody CreateAdRequest request, UriComponentsBuilder builder)
     {
             Ad ad = CreateAdRequest
-                    .dtoToEntityMapper(category -> categoryService.find(category).orElseThrow(), login -> userService.find(login).orElseThrow())
+                    .dtoToEntityMapper(category -> categoryService.find(category).orElseThrow(), () -> null)
                     .apply(request);
             ad = adService.create(ad);
             return ResponseEntity.created(builder.pathSegment("ads", "{id}")

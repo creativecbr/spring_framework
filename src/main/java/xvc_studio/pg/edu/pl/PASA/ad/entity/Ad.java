@@ -1,7 +1,6 @@
 package xvc_studio.pg.edu.pl.PASA.ad.entity;
 
 import lombok.*;
-import xvc_studio.pg.edu.pl.PASA.category.entity.Category;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
 
 import javax.persistence.*;
@@ -25,7 +24,7 @@ public class Ad implements Serializable {
      * Unique Ad's identification number.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

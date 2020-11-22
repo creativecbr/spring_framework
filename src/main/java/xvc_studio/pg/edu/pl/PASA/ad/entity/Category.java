@@ -1,4 +1,4 @@
-package xvc_studio.pg.edu.pl.PASA.category.entity;
+package xvc_studio.pg.edu.pl.PASA.ad.entity;
 
 import lombok.*;
 import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
@@ -26,7 +26,7 @@ public class Category implements Serializable {
      * Unique id of category.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**

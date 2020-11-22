@@ -1,16 +1,16 @@
 
 
-GET http://localhost:8080/users/creativexvc/ads
+GET http://localhost:8083/users/creativexvc/ads
 
 
 ###
 
-GET http://localhost:8080/users/creativexvc/ads/5
+GET http://localhost:8083/users/creativexvc/ads/2
 
 
 ###
 
-POST http://localhost:8080/users/creativexvc/ads
+POST http://localhost:8083/users/creativexvc/ads
 Content-Type: application/json
 
 {
@@ -22,13 +22,11 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/users/creativexvc/ads/9
+GET http://localhost:8083/users/creativexvc/ads/
 
 ###
 
-
-
-PUT http://localhost:8080/users/creativexvc/ads/9
+PUT http://localhost:8083/users/creativexvc/ads/1
 Content-Type: application/json
 
 {
@@ -38,12 +36,16 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/users/creativexvc/ads/9
+GET http://localhost:8083/users/creativexvc/ads/
+
+###
+
+DELETE http://localhost:8083/users/creativexvc/ads/1
 
 ###
 
 
-GET http://localhost:8080/ads
+GET http://localhost:8083/ads
 
 ###
 
