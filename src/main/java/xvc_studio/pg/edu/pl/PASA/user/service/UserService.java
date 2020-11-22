@@ -68,8 +68,9 @@ public class UserService {
      */
     @Transactional
     public void delete(String login){
-        userRepository.delete( userRepository.findByLogin(login).orElseThrow());
-        eventRepository.delete( userRepository.findByLogin(login).orElseThrow());
+        User user = userRepository.findByLogin(login).orElseThrow();
+        userRepository.delete(user);
+        eventRepository.delete(user);
     }
 
     /**
