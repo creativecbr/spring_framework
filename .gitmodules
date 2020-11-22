@@ -1,12 +1,8 @@
-[submodule "ads_service"]
-	path = ads_service
+[submodule "ads_categories_service"]
+	path = ads_categories_service
 	url = https://github.com/creativecbr/spring_framework/
 	branch = spring_microservices_ads
-[submodule "users_service"]
-	path = users_service
+[submodule "user_service"]
+	path = user_service
 	url = https://github.com/creativecbr/spring_framework/
 	branch = spring_microservices_users
-[submodule "gateway"]
-	path = gateway
-	url = https://github.com/creativecbr/spring_framework/
-	branch = spring_microservices_gateway
