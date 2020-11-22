@@ -1,6 +1,6 @@
 ## Purchase & Sale Announcements
 
-# User microservice
+# Ads&Category microservice
 
 Ads and simple category service in one separate data base.
 
