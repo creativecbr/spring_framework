@@ -6,8 +6,6 @@ GET http://localhost:8083/users/creativexvc/ads
 ###
 
 GET http://localhost:8083/users/creativexvc/ads/2
-
-
 ###
 
 POST http://localhost:8083/users/creativexvc/ads
