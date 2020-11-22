@@ -2,7 +2,6 @@ package xvc_studio.pg.edu.pl.PASA.user.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -59,11 +58,5 @@ public class User implements Serializable {
     @Column(unique = true)
     private String email;
 
-    /**
-     * User's list of ads.
-     */
-    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
-    @ToString.Exclude
-    private List<Ad> ads;
 
 }

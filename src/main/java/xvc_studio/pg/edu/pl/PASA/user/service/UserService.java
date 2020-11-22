@@ -2,8 +2,8 @@ package xvc_studio.pg.edu.pl.PASA.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xvc_studio.pg.edu.pl.PASA.ad.entity.Ad;
 import xvc_studio.pg.edu.pl.PASA.user.entity.User;
+import xvc_studio.pg.edu.pl.PASA.user.event.repository.UserEventRepository;
 import xvc_studio.pg.edu.pl.PASA.user.repository.UserRepository;
 
 import javax.transaction.Transactional;
@@ -22,11 +22,18 @@ public class UserService {
     private UserRepository userRepository;
 
     /**
+     * Repository for sending events about actions on user entities.
+     */
+    private UserEventRepository eventRepository;
+
+
+    /**
      * @param userRepository repository for user entity
      */
     @Autowired
-    public UserService(UserRepository userRepository){
+    public UserService(UserRepository userRepository, UserEventRepository eventRepository){
         this.userRepository = userRepository;
+        this.eventRepository = eventRepository;
     }
 
     /**
@@ -50,14 +57,20 @@ public class UserService {
      * @param user
      */
     @Transactional
-    public void create(User user){ userRepository.save(user); }
+    public void create(User user){
+        userRepository.save(user);
+//        eventRepository.create(user);
+    }
 
     /**
      * Delete existing user.
      * @param login
      */
     @Transactional
-    public void delete(String login){ userRepository.delete( userRepository.findByLogin(login).orElseThrow()); }
+    public void delete(String login){
+        userRepository.delete( userRepository.findByLogin(login).orElseThrow());
+//       eventRepository.delete( userRepository.findByLogin(login).orElseThrow());
+    }
 
     /**
      * Return all user in list.
@@ -66,4 +79,5 @@ public class UserService {
     public List<User> findAll(){ return userRepository.findAll(); }
 
 
+    public void update(User user) { userRepository.save(user); }
 }
