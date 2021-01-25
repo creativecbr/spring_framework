@@ -1,0 +1,119 @@
+
+GET http://localhost:8080/files/download/creativexvc_6030984.jpg
+
+###
+GET http://localhost:9300/users/creativexvc/ads
+
+
+###
+
+GET http://localhost:8080/users/creativexvc/ads
+
+
+###
+
+POST http://localhost:8080/users/creativexvc/ads
+Content-Type: application/json
+
+{
+  "title": "Tytuł ogłoszenia",
+  "description": "Opis ogłoszenia.",
+  "category": "Motoryzacja"
+
+}
+
+###
+
+GET http://localhost:8080/users/creativexvc/ads/9
+
+###
+
+
+
+PUT http://localhost:8080/users/creativexvc/ads/9
+Content-Type: application/json
+
+{
+  "title": "Opel Kadet - jednak zawodna jednostka",
+  "description": "Opel Kadet na części."
+}
+
+###
+
+DELETE http://localhost:8080/users/creativexvc/ads/9
+
+###
+
+
+GET http://localhost:8080/ads
+
+###
+
+
+PUT http://localhost:8080/users/creativexvc/
+Content-Type: application/json
+
+{
+  "title": "NOWE PO ZMIANACH",
+  "description": "OPISIK"
+
+}
+
+###
+
+
+DELETE http://localhost:8080/users/creativexvc/
+
+###
+
+PUT http://localhost:8080/ads/
+Content-Type: application/json
+
+{
+  "title": "Nowe ogłoszenie",
+  "description": "Opis nowego ogłoszenia",
+  "category": "Moasdasdacja",
+  "user": "creativsadc"
+}
+
+###
+
+GET http://localhost:8080/ads
+
+
+
+###
+GET http://localhost:8080/categories
+
+###
+
+
+
+POST http://localhost:8080/categories
+Content-Type: application/json
+
+{
+  "name": "Praca"
+}
+
+###
+
+GET http://localhost:8080/categories
+
+###
+
+PUT http://localhost:8080/categories/4
+Content-Type: application/json
+
+{
+"name": "Edukacja"
+}
+
+###
+
+DELETE  http://localhost:8080/categories/4
+
+
+###
+
+GET http://localhost:8080/categories/Motoryzacja

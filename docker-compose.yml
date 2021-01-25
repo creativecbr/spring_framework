@@ -1,5 +1,19 @@
 version: "3.9"
 services: 
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: pasa_backend_dockerfile
+    ports:
+      - 9300:8080
+    volumes:
+      - ./images:/images
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+    networks:
+     pasaApp:
   frontend:
     container_name: frontend
     build:
@@ -15,17 +29,11 @@ services:
     environment: 
      - MYSQL_ROOT_PASSWORD=root
      - MYSQL_DATABASE=pasaDB
-    networks:
-     pasaApp:
-  backend:
-    container_name: backend
-    build:
-      context: .
-      dockerfile: pasa_backend_dockerfile
-    ports:
-      - 9300:8080
-    volumes:
-      - ./images:/images
+    healthcheck:
+      test: ["CMD", 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-p$$MYSQL_ROOT_PASSWORD' ]
+      interval: 1s
+      timeout: 3s
+      retries: 30
     networks:
      pasaApp:
 networks:

@@ -14,9 +14,15 @@ To deploy PASA app just install docker aplication and setup docker-compose.
 ```bash
 docker-compose up --build
 ``` 
-and wait about 10 seconds.
+and wait about 5 seconds.
 
-5. HAVE FUN!
+5. Open your favourite internet browser and go to:
+
+```bash
+http://localhost:8084/index.html
+```
+
+5. Buy, sell, HAVE FUN!
 
 ## Author
 Leśniewski Paweł © 2020, *student No.175724*
