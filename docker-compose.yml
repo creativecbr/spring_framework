@@ -21,6 +21,8 @@ services:
       dockerfile: pasa_frontend_dockerfile
     ports:
       - 8084:80  
+    volumes:
+      - ./configuration:/config
     networks:
      pasaApp:
   mysqldb:

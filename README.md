@@ -27,7 +27,7 @@ and wait about 5 seconds.
 6. Open your favourite internet browser and go to:
 
 ```bash
-http://localhost:8084/index.html
+http://localhost:8084/
 ```
 
 7. Buy, sell, HAVE FUN!

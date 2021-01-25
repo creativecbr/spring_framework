@@ -9,6 +9,8 @@ RUN apt-get clean
 
 COPY "./frontend" "${DESTINATION}"
 
+COPY "./configuration/000-default.conf" "/etc/apache2/sites-available/"
+
 EXPOSE 80
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
