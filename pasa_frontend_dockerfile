@@ -1,0 +1,14 @@
+FROM ubuntu
+
+ENV DEBIAN_FRONTEND=noninteractive 
+ARG DESTINATION="/var/www/html"
+
+RUN apt-get update
+RUN apt-get install -y apache2 apache2-utils
+RUN apt-get clean
+
+COPY "./frontend" "${DESTINATION}"
+
+EXPOSE 9300
+
+CMD ["apache2ctl", "-D", "FOREGROUND"]

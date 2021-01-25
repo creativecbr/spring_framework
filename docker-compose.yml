@@ -1,0 +1,32 @@
+version: "3.9"
+services: 
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: pasa_frontend_dockerfile
+    ports:
+      - 8084:80  
+    networks:
+     pasaApp:
+  mysqldb:
+    container_name: pasaApp
+    image: mysql:8
+    environment: 
+     - MYSQL_ROOT_PASSWORD=root
+     - MYSQL_DATABASE=pasaDB
+    networks:
+     pasaApp:
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: pasa_backend_dockerfile
+    ports:
+      - 9300:8080
+    volumes:
+      - ./images:/images
+    networks:
+     pasaApp:
+networks:
+    pasaApp:

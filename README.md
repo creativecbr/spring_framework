@@ -1,24 +1,18 @@
-# Purchase & Sale Announcements
+# Purchase & Sale Announcements 
 
-## Target
+## Deployment
 
-App designed to enable people selling and buying items online more easily.
+To deploy PASA app just install docker aplication and setup docker-compose.
 
-## Features provided
+1. [Install docker](https://https://www.docker.com/get-started "Install page")
 
-* Exploring the list of users
-* Adding and showing users' ad
-* Every ad include a category that can browse
-* Edditing users' profiles
+2. Run docker application.
 
-## MySql database 
+3. Open terminal and go to folder with repository.
 
-Database should be expose on server named pasaApp, on port 3306.
-```bash 
-login: root
-password: root
-```
-> 
+4. Write **docker-compose up --build** and wait about 10 seconds.
+
+5. HAVE FUN!
 
 ## Author
 Leśniewski Paweł © 2020, *student No.175724*
