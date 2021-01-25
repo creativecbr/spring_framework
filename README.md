@@ -8,21 +8,30 @@ To deploy PASA app just install docker aplication and setup docker-compose.
 
 2. Run docker application.
 
-3. Open terminal and go to folder with repository.
+3. Open terminal and download repository, **remember** about recursive frontend branch!
 
-4. Write 
+```bash
+git clone --single-branch --branch spring_data_mvc_deployment --recurse-submodules -j8 git://github.com/creativecbr/spring_framework.git
+```
+4. Get into
+```bash
+spring_framework
+```
+folder.
+
+5. Write 
 ```bash
 docker-compose up --build
 ``` 
 and wait about 5 seconds.
 
-5. Open your favourite internet browser and go to:
+6. Open your favourite internet browser and go to:
 
 ```bash
 http://localhost:8084/index.html
 ```
 
-5. Buy, sell, HAVE FUN!
+7. Buy, sell, HAVE FUN!
 
 ## Author
 Leśniewski Paweł © 2020, *student No.175724*
