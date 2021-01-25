@@ -13,11 +13,10 @@ To deploy PASA app just install docker aplication and setup docker-compose.
 ```bash
 git clone --single-branch --branch spring_data_mvc_deployment --recurse-submodules -j8 git://github.com/creativecbr/spring_framework.git
 ```
-4. Get into
+4. Get into folder named
 ```bash
 spring_framework
 ```
-folder.
 
 5. Write 
 ```bash
