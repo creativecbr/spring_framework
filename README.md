@@ -4,7 +4,7 @@
 
 To deploy PASA app just install docker aplication and setup docker-compose.
 
-1. [Install docker](https://https://www.docker.com/get-started "Install page")
+1. [Install docker](https://www.docker.com/get-started "Install page")
 
 2. Run docker application.
 
@@ -21,8 +21,7 @@ spring_framework
 5. Write 
 ```bash
 docker-compose up --build
-``` 
-and wait about 5 seconds.
+``` and wait about 5 seconds.
 
 6. Open your favourite internet browser and go to:
 
