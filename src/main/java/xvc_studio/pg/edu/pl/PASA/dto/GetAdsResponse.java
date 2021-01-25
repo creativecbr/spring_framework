@@ -23,6 +23,12 @@ public class GetAdsResponse {
     @ToString
     @EqualsAndHashCode
     public static class Ad {
+
+        /**
+         * Title of the ad.
+         */
+        private Long id;
+
         /**
          * Title of the ad.
          */
@@ -33,11 +39,15 @@ public class GetAdsResponse {
          */
         private String description;
 
-
         /**
          * Ad's category.
          */
         private String category;
+
+        /**
+         * Advertisement's icon path.
+         */
+        private String iconPath;
 
     }
 
@@ -50,9 +60,11 @@ public class GetAdsResponse {
             GetAdsResponseBuilder response = GetAdsResponse.builder();
             ads.stream()
                     .map(ad -> Ad.builder()
+                            .id(ad.getId())
                             .title(ad.getTitle())
                             .description(ad.getDescription())
                             .category(ad.getCategory().getName())
+                            .iconPath(ad.getIconPath())
                             .build())
                     .forEach(response::ad);
             return response.build();

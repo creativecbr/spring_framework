@@ -34,6 +34,11 @@ public class CreateAdOnUserRequest {
     private String category;
 
     /**
+     * Advertisement's icon path.
+     */
+    private String iconPath;
+
+    /**
      * @param categoryFunction function for converting category name to category entity object
      * @param userSupplier     supplier for providing new character owner
      * @return mapper for convenient converting dto object to entity object
@@ -46,6 +51,7 @@ public class CreateAdOnUserRequest {
                 .description(request.getDescription())
                 .user(userSupplier.get())
                 .category(categoryFunction.apply(request.getCategory()))
+                .iconPath(request.getIconPath())
                 .build();
     }
 

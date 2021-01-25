@@ -39,6 +39,12 @@ public class GetAdResponse {
      */
     private String user;
 
+    /**
+     * Advertisement's icon path.
+     */
+    private String iconPath;
+
+
 
     public static Function<Ad, GetAdResponse> entityToDtoMapper()
     {
@@ -48,6 +54,7 @@ public class GetAdResponse {
                 .description(ad.getDescription())
                 .category(ad.getCategory().getName())
                 .user(ad.getUser().getLogin())
+                .iconPath(ad.getIconPath())
                 .build();
 
         }

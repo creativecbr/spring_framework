@@ -39,6 +39,11 @@ public class Ad implements Serializable {
     private String description;
 
     /**
+     * Advertisement's icon path.
+     */
+    private String iconPath;
+
+    /**
      * Advertisement's category.
      */
     @ManyToOne
@@ -52,5 +57,6 @@ public class Ad implements Serializable {
     @JoinColumn(name = "user")
     @ToString.Exclude
     private User user;
+
 
 }

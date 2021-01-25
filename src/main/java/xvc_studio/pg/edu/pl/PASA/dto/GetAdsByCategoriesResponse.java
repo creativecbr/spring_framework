@@ -31,6 +31,11 @@ public class GetAdsByCategoriesResponse {
          */
         private String description;
 
+        /**
+         *  Ad's icon path.
+         */
+        private String iconPath;
+
     }
 
     @Singular
@@ -43,6 +48,7 @@ public class GetAdsByCategoriesResponse {
                     .map(ad -> Ad.builder()
                             .title(ad.getTitle())
                             .description(ad.getDescription())
+                            .iconPath(ad.getIconPath())
                             .build())
                     .forEach(response::ad);
             return response.build();

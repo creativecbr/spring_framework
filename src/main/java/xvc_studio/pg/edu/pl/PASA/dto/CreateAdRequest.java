@@ -38,6 +38,9 @@ public class CreateAdRequest {
      */
     private String user;
 
+
+
+
     /**
      * @param categoryFunction function for converting category name to category entity object
      * @param userSupplier     supplier for providing new character owner
