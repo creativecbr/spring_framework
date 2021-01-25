@@ -1,0 +1,17 @@
+{
+  "name": "PASA",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Purchase and sale annoucements",
+  "keywords": [
+    "PASA",
+    "OLX"
+  ],
+  "license": "MIT",
+  "author": "xvc studio",
+  "scripts": {
+    "dev": "http-server -p 9300 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "0.12.3"
+  }
+}
