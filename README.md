@@ -21,7 +21,8 @@ spring_framework
 5. Write 
 ```bash
 docker-compose up --build
-``` and wait about 5 seconds.
+``` 
+and wait about 5 seconds.
 
 6. Open your favourite internet browser and go to:
 
