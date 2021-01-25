@@ -10,7 +10,9 @@ To deploy PASA app just install docker aplication and setup docker-compose.
 
 3. Open terminal and go to folder with repository.
 
-4. Write **docker-compose up --build** and wait about 10 seconds.
+4. Write ```bash
+docker-compose up --build
+``` and wait about 10 seconds.
 
 5. HAVE FUN!
 
